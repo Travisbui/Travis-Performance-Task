@@ -1,5 +1,8 @@
 extends Node2D
 
+@onready var bg_music = $"../BGmusic"
+@onready var enemy_hit = $"../EnemyHit"
+
 @export var Speed = 400
 
 
@@ -19,3 +22,5 @@ func _process(delta):
 
 func _on_body_entered(body):
 	hide()
+	enemy_hit.play()
+	bg_music.stop()
